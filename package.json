@@ -1,6 +1,6 @@
 {
-  "name": "react-native-flex-view",
-  "version": "1.6.3",
+  "name": "@vko-online/react-native-flex-view",
+  "version": "2.0.2",
   "description": "React-native view with steroids",
   "main": "./dist/index.js",
   "files": [

@@ -5,6 +5,7 @@ interface Props extends ViewStyle, ViewProps {
   children: React.ReactNode
   horizontal?: boolean
   vertical: boolean
+  style?: StyleProp<ViewStyle>
 }
 
 function clean (obj) {
@@ -27,7 +28,7 @@ const verticalStyle: ViewStyle = {
   alignItems: 'center'
 }
 
-const View: React.FC<Props> = ({ children, horizontal, vertical, ...props }: Props) => {
+const View: React.FC<Props> = ({ style, children, horizontal, vertical, ...props }: Props) => {
   const {
     accessible,
     accessibilityLabel,
@@ -93,15 +94,15 @@ const View: React.FC<Props> = ({ children, horizontal, vertical, ...props }: Pro
   }
   const passedStyle = clean(otherProps)
   const paneProps = clean(viewProps)
-  let style = [passedStyle]
+  let allStyles = [passedStyle, style]
   if (horizontal) {
-    style = [passedStyle, horizontalStyles]
+    allStyles = [passedStyle, horizontalStyles, style]
   }
   if (vertical) {
-    style = [passedStyle, verticalStyle]
+    allStyles = [passedStyle, verticalStyle, style]
   }
   return (
-    <RNView style={style} {...paneProps}>
+    <RNView style={allStyles} {...paneProps}>
       {children}
     </RNView>
   )
