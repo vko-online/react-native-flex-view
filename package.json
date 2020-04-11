@@ -1,5 +1,5 @@
 {
-  "name": "view-on-steroids",
+  "name": "react-native-flex-view",
   "version": "1.6.3",
   "description": "React-native view with steroids",
   "main": "./dist/index.js",
@@ -23,7 +23,7 @@
   "author": "Medet Tleukabiluly <m.tleukabiluly@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vko-online/pane/issues"
+    "url": "https://github.com/vko-online/view/issues"
   },
   "homepage": "https://github.com/vko-online/pane#readme",
   "dependencies": {
